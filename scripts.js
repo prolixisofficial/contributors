@@ -16,16 +16,16 @@ const empId = getQueryParam("id");
 const nameElement = document.getElementById("name");
 const roleElement = document.getElementById("role");
 
-// Check if Employee exists
+// Display Employee Data or Error Message
 if (empId && employees[empId]) {
     nameElement.innerText = employees[empId].name;
     roleElement.innerText = employees[empId].role;
 } else {
     nameElement.innerText = "Employee Not Found";
     roleElement.innerText = "Please check the ID or contact admin.";
-    
-    // Optional: Delay before redirecting to a default page
+
+    // Optional: Redirect to homepage after 5 seconds if no employee found
     setTimeout(() => {
-        window.location.href = "index.html"; // Change this to a proper error page if needed
+        window.location.href = "https://prolixisofficial.github.io/contributors/";
     }, 5000);
 }
