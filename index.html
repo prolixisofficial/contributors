@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Details</title>
     <style>
-        /* Professional Styling */
+        /* Global Styles */
         body { 
             font-family: 'Poppins', sans-serif; 
             text-align: center; 
             margin: 0; 
             padding: 0;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
-            color: #fff;
+            background: #f8f9fa; /* Soft white background */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -22,27 +21,22 @@
 
         /* Transparent Header */
         .header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px 0;
-            text-align: center;
             font-size: 24px;
             font-weight: 600;
-            color: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
+            color: #333;
+            margin-bottom: 20px;
         }
 
-        /* Employee Card */
+        /* Employee ID Card */
         .card { 
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
             padding: 30px;
-            width: 350px;
+            width: 400px;
             text-align: center;
+            position: relative;
+            border: 2px solid #007bff;
             transition: transform 0.3s ease-in-out;
         }
 
@@ -50,16 +44,36 @@
             transform: scale(1.05);
         }
 
+        /* Profile Image */
+        .profile-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid #007bff;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
         h2 { 
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #fff;
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 5px;
         }
 
         p { 
-            font-size: 18px;
-            font-weight: 300;
-            color: #f1f1f1;
+            font-size: 16px;
+            font-weight: 500;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        /* Badge-like Divider */
+        .divider {
+            height: 4px;
+            width: 80px;
+            background: #007bff;
+            margin: 10px auto;
+            border-radius: 5px;
         }
 
         /* Footer */
@@ -69,7 +83,7 @@
             width: 100%;
             text-align: center;
             font-size: 14px;
-            color: rgba(255, 255, 255, 0.7);
+            color: #777;
         }
 
         @media (max-width: 600px) {
@@ -81,15 +95,17 @@
 </head>
 <body>
 
-    <!-- Transparent Header -->
+    <!-- Header -->
     <div class="header">
-        Employee Details
+        Employee / Contributors Detail
     </div>
 
     <!-- Employee Details Card -->
     <div class="card">
+        <img src="https://via.placeholder.com/80" class="profile-pic" id="profilePic" alt="Profile Picture">
         <h2 id="name">Loading...</h2>
         <p id="role"></p>
+        <div class="divider"></div>
     </div>
 
     <!-- Footer -->
