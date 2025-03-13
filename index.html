@@ -5,92 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Details</title>
     <style>
-        /* Global Styles */
-        body { 
-            font-family: 'Poppins', sans-serif; 
-            text-align: center; 
-            margin: 0; 
-            padding: 0;
-            background: #f8f9fa; /* Soft white background */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+       /* Global Styles */
+body { 
+    font-family: 'Poppins', sans-serif; 
+    text-align: center; 
+    margin: 0; 
+    padding: 0;
+    background: #f8f9fa; /* Soft white background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-        /* Transparent Header */
-        .header {
-            font-size: 24px;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 20px;
-        }
+/* Header */
+.header {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
 
-        /* Employee ID Card */
-        .card { 
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-            padding: 30px;
-            width: 400px;
-            text-align: center;
-            position: relative;
-            border: 2px solid #007bff;
-            transition: transform 0.3s ease-in-out;
-        }
+/* Employee ID Card with Double Border */
+.card {
+    background: #ffffff;
+    padding: 30px;
+    width: 400px;
+    text-align: center;
+    position: relative;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
 
-        .card:hover {
-            transform: scale(1.05);
-        }
+/* Outer Glowing Border Effect */
+.card::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 24px;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b, #ffbb00, #00c6ff);
+    z-index: -1;
+    animation: borderAnimation 3s infinite linear;
+}
 
-        /* Profile Image */
-        .profile-pic {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 3px solid #007bff;
-            object-fit: cover;
-            margin-bottom: 15px;
-        }
+/* Profile Picture with Gradient Border */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
 
-        h2 { 
-            font-size: 22px;
-            color: #333;
-            margin-bottom: 5px;
-        }
+.profile-pic {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    padding: 5px;
+    background: linear-gradient(135deg, #ff416c, #ffbb00, #00c6ff);
+}
 
-        p { 
-            font-size: 16px;
-            font-weight: 500;
-            color: #666;
-            margin-bottom: 10px;
-        }
+/* Animated Divider */
+.divider {
+    height: 4px;
+    width: 80px;
+    background: linear-gradient(to right, #007bff, #ff416c);
+    margin: 10px auto;
+    border-radius: 5px;
+    animation: glow 2s infinite alternate;
+}
 
-        /* Badge-like Divider */
-        .divider {
-            height: 4px;
-            width: 80px;
-            background: #007bff;
-            margin: 10px auto;
-            border-radius: 5px;
-        }
+/* Hover Effect */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+}
 
-        /* Footer */
-        .footer {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
-            text-align: center;
-            font-size: 14px;
-            color: #777;
-        }
+/* Footer */
+.footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+}
 
-        @media (max-width: 600px) {
-            .card {
-                width: 90%;
-            }
-        }
+/* Animations */
+@keyframes glow {
+    0% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+@keyframes borderAnimation {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .card {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .profile-pic {
+        width: 70px;
+        height: 70px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
     </style>
 </head>
 <body>
