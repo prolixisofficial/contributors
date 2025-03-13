@@ -2,12 +2,12 @@ const employees = {
     "523520": { 
         name: "Dhani Sinha", 
         role: "Cloud Engineer, Project Contributor",
-        image: "https://prolixisofficial.github.io/images/dhani-image.jpg" // Replace with actual image URL
+        image: "https://github.com/prolixisofficial/contributors/images/dhani-image.jpg" // Replace with actual image URL
     },
     "908839": { 
         name: "Yashwant G", 
         role: "Full-Stack Developer, Project Contributor",
-        image: "https://prolixisofficial.github.io/images/yashwant-image.jpg" // Replace with actual image URL
+        image: "https://github.com/prolixisofficial/contributors/images/yashwant-image.jpg" // Replace with actual image URL
     }
 };
 
