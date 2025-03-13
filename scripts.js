@@ -1,6 +1,6 @@
 const employees = {
     "523520": { name: "Dhani Sinha", role: "Cloud Engineer, Project Contributor" },
-    "908839": { name: "Yashwant G", role: "Full-Stack Developer, Project Contributor" }
+    "908839": { name: "Yashvanth G", role: "Full-Stack Developer, Project Contributor" }
 };
 
 // Function to get query parameters
