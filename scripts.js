@@ -8,6 +8,16 @@ const employees = {
         name: "Yashwant G", 
         role: "Full-Stack Developer, Project Contributor",
         image: "images/yashwant-image.jpg" // Replace with actual image URL
+    },
+    "795159": { 
+        name: "Naman Pathania", 
+        role: "Cyber-Security Engineer, Project Contributor",
+        image: "images/NAMAN-PROLIXIS.jpg" // Replace with actual image URL
+    },
+    "882541": { 
+        name: "Akshita Sharma", 
+        role: "Cyber-Security Engineer, Project Contributor",
+        image: "images/AKSHITA-PROLIXIS.jpg" // Replace with actual image URL
     }
 };
 
